@@ -117,7 +117,7 @@ public class EstudianteLogin extends JPanel{
 	
 	public void validarID() {
 		idEstudiante= inputtxt.getText();
-		if (idEstudiante.isBlank() ||idEstudiante.isEmpty() ) {
+		if (idEstudiante.isEmpty() ||idEstudiante.isEmpty() ) {
 			JOptionPane.showMessageDialog(this, "El campo esta vacio");
 		}else{
 			int codigo = Integer.parseInt(idEstudiante);

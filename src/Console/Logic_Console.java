@@ -252,7 +252,7 @@ public class Logic_Console {
 			
 			
 		
-			CursoAInscribir = CursoAInscribir.strip(); 
+			CursoAInscribir = CursoAInscribir.trim(); 
 			if (CursoAInscribir.endsWith("#")) {
 				CursoAInscribir = CursoAInscribir.replace("#", ""); 
 				Curso CursoI = plan.convertidor_Curso(CursoAInscribir);

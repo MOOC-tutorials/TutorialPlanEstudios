@@ -84,13 +84,13 @@ public class PlanDeEstudios {
 					 System.out.println("Fin");
 					 String str = "  hello !   ";
 				 }else {
-				 String inputNombre = token[7].strip();
-				 String inputCod = token[4].strip();
+				 String inputNombre = token[7].trim();
+				 String inputCod = token[4].trim();
 				 String inputPrereq = "ninguno";
 				 String inputCoreq = "ninguno";
 				 int inputCreditos = Integer.parseInt(token[6]);
-				 String inputTipo = token[1].strip();
-				 String inputCiclo = token[2].strip();
+				 String inputTipo = token[1].trim();
+				 String inputCiclo = token[2].trim();
 				 String inputHorario = " ";
 				 if (!NombreCursos.contains(inputNombre)) {
 				
@@ -123,14 +123,14 @@ public class PlanDeEstudios {
 					
 					String[] token = data.split(";");
 
-					 String inputNombre = token[0].strip();
-					 String inputCod = token[1].strip();
-					 String inputPrereq = token[2].strip();
-					 String inputCoreq = token[3].strip();
+					 String inputNombre = token[0].trim();
+					 String inputCod = token[1].trim();
+					 String inputPrereq = token[2].trim();
+					 String inputCoreq = token[3].trim();
 					 int inputCreditos = Integer.parseInt(token[4]);
-					 String inputTipo = token[5].strip();
-					 String inputCiclo = token[6].strip();
-					 String inputHorario = (token[7].strip());
+					 String inputTipo = token[5].trim();
+					 String inputCiclo = token[6].trim();
+					 String inputHorario = (token[7].trim());
 					 if (!NombreCursos.contains(inputNombre)) {
 					 NombreCursos.add(inputNombre); 
 					 Curso c = new Curso(inputNombre, inputCod, inputPrereq, inputCoreq, inputCreditos, inputTipo, inputCiclo, inputHorario);
@@ -158,7 +158,7 @@ public class PlanDeEstudios {
 				
 				String[] token = data.split(";");
 				
-				String codigoString = (token[2].strip());
+				String codigoString = (token[2].trim());
 				int codigo = Integer.parseInt(codigoString);
 				Administrativos a = new Administrativos(token[0],token[1],codigo);
 				AdministrativosList.add(a); 
@@ -187,10 +187,10 @@ public class PlanDeEstudios {
 				
 				String[] token = data.split(";");
 				
-				double a = Double.parseDouble((token[3]).strip());
-				String codigoString = (token[2].strip());
+				double a = Double.parseDouble((token[3]).trim());
+				String codigoString = (token[2].trim());
 				int codigo =  Integer.parseInt(codigoString);
-				Estudiantes e = new Estudiantes(token[0].strip(), token[1].strip(),codigo , a, convertidor_string_Curso(token[4]));
+				Estudiantes e = new Estudiantes(token[0].trim(), token[1].trim(),codigo , a, convertidor_string_Curso(token[4]));
 				
 				crearCarpeta(codigoString, "docs/Estudiantes/");
 				Codigo_Estudiantes.add(codigo);
@@ -309,14 +309,14 @@ public class PlanDeEstudios {
 				String[] token = data.split(";");
 				
 				
-				 String inputNombre = token[0].strip();
-				 String inputCod = token[1].strip();
-				 String inputPrereq = token[2].strip();
-				 String inputCoreq = token[3].strip();
+				 String inputNombre = token[0].trim();
+				 String inputCod = token[1].trim();
+				 String inputPrereq = token[2].trim();
+				 String inputCoreq = token[3].trim();
 				 int inputCreditos = Integer.parseInt(token[4]);
-				 String inputTipo = token[5].strip();
-				 String inputCiclo = token[6].strip();
-				 String inputHorario = token[7].strip();
+				 String inputTipo = token[5].trim();
+				 String inputCiclo = token[6].trim();
+				 String inputHorario = token[7].trim();
 				 
 				 
 				
@@ -390,7 +390,7 @@ public class PlanDeEstudios {
 		ArrayList<Curso> CursosInscritos = new ArrayList<Curso>();
 		String[] c = Cadena_Cursos.split(",");
 		for (String curso: c) {
-			curso = curso.strip();
+			curso = curso.trim();
 			Iterator <Curso> icode = getCursosCargados().iterator();
 			while (icode.hasNext()) {
 				Curso i = icode.next();
@@ -412,7 +412,7 @@ public class PlanDeEstudios {
 				data = fScn.nextLine();
 				
 				String[] token = data.split(";");
-				String inputNombre = token[0].strip();
+				String inputNombre = token[0].trim();
 				
 				Curso c = convertidor_Curso(inputNombre);
 					if(c!=null) {
@@ -436,8 +436,8 @@ public class PlanDeEstudios {
 				
 				//Carga los cursos de un estudiante, tomando como nota el token 8
 				String[] token = data.split(";");
-				String inputNombre = token[0].strip();
-				double inputNota = Double.parseDouble((token[2]).strip());
+				String inputNombre = token[0].trim();
+				double inputNota = Double.parseDouble((token[2]).trim());
 				
 				Curso c = convertidor_Curso(inputNombre);
 				if (c!=null) {

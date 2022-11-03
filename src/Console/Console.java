@@ -809,7 +809,7 @@ public class Console {
 		String CursoAInscribir = (input("Por favor seleccione una opción(Solo se puede Inscribir de a un curso)Puede con el nombre o Codigo"));
 		
 	
-		CursoAInscribir = CursoAInscribir.strip(); 
+		CursoAInscribir = CursoAInscribir.trim(); 
 		if (CursoAInscribir.endsWith("#")) {
 			CursoAInscribir = CursoAInscribir.replace("#", ""); 
 			Curso CursoI = plan.convertidor_Curso(CursoAInscribir);
